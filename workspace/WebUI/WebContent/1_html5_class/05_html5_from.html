@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>05_html5_from</title>
+</head>
+<body>
+	<form action="xxxxx.jsp" method="get">
+	<fieldset>
+			<legend>로그인정보</legend>
+			<ol>
+				<li>
+				<label for='id'>아이디</label> 
+				<input type="text" name="id" id='id' >
+				</li>
+				<li>
+				<label for='pw'>비밀번호</label> 
+				<input type="password" name="pw" id='pw' >
+				</li>
+				<li>
+				<label for='pw'>비밀번호확인</label> 
+				<input type="password" name="pw" id='pw' >
+				</li>
+				<li>
+				<label for='aa'>회원등급</label> 
+				<input type="text" name="aa" id='aa' placeholder="준회원" required>
+				</li>
+			</ol>
+		</fieldset>
+		<fieldset>
+			<legend>개인정보</legend>
+			<ol>
+				<li>
+				<label for='name'>이름*</label> 
+				<input type="text" name="name" id='name' placeholder="홍길동" required>
+				</li>
+				<li>
+				<label for='email'>이메일*</label> 
+				<input type="email" name="email" id='email' placeholder="abcd@defg.com" required>
+				</li>
+				<li>
+				<label for='tel'>전화번호</label> 
+				<input type="tel" name="tel" id='tel' placeholder="010-2222-3333">
+				</li>
+				<li>
+				<label for='mybirth'>생일</label> 
+				<input type="date" name="mybirth" id='mybirth' / >
+				</li>
+			</ol>
+		</fieldset>
+		<fieldset>
+		<legend>코딩숙련동(상,중,하)</legend>
+		<ol>
+		<li><input type="range" name="points" min="1" max="3">
+		</li>
+		</ol>
+		</fieldset>
+		<fieldset>
+			<input type="submit" value="전송">
+		</fieldset>
+	</form>
+</body>
+</html>

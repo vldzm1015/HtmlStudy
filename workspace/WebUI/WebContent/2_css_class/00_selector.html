@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> 연습</title>
+<style type="text/css">
+	#point100 div { color: green;}
+	div { color: red;}
+	div { color: blue;}
+	#point10 div { color: green;}
+	
+	body div#point100{ color: gray;}
+	
+	input {	 border: 1px dotted green;}
+	input[type='text'] {	 border: 2px solid red;}
+	
+	/* input요소의 첫번째 요소를 테두리 변경	*/
+	input:first-of-type { border: 2px dashed green;}
+	
+	/* input요소의 마지막 요소를 테두리 변경	*/
+	input:last-of-type { border: 2px dashed yellow;}
+	
+	/* input요소의 5번째 요소를 테두리 변경	*/
+	/*input:nth-child(5) { border: 2px dotted black;}  도 가능*/
+	input:nth-of-type(5) { border: 2px dotted black;}
+
+	/* input요소의 뒤에서 2번째 요소를 테두리 변경	*/
+	input:nth-last-of-type(2) { border: 2px dashed orange;}
+</style>
+</head>
+<body>
+	
+	<div id="point100" class="point10">안녕하세요</div>
+	
+	
+	<p>
+		<input type="text" value="입력1" >
+		<input type="checkbox"> 선택
+		<input type="radio" name="rd"  checked="checked"> 예
+		<input type="radio" name="rd"> 아니오
+		<input type="text" value="입력2" disabled="disabled">		
+		<input type="button" value="확인">
+		<input type="button" value="취소">
+	</p>
+	
+	
+</body>
+</html>

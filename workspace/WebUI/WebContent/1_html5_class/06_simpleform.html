@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>06_simpleform.html</title>
+</head>
+<body>
+	<!-- method="get"  :  텍스트가 확인가능
+	method="post"  :  텍스트가 확인불가능--> 
+	<form action="xxxxx.jsp" method="post">
+		<fieldset>
+		<legend>회원가입</legend>
+		<ol>
+		<li>이름 : <input name='irum' type='text' /> </li>
+		<li>비밀번호 : <input name='pw' type="password"> </li>
+		<li>성별 : 
+		<input name="gender" type="radio"  name="gender" value="male" checked> Male
+  		<input type="radio" name="gender" value="female"> Female<br></li>
+		<li>직업 : <input type="text" list="job">
+  			<datalist id='job'>
+  				<option value="회사원"/> 
+  				<option value="학생"/> 
+  				<option value="무직"/> 
+  			</datalist>
+		</li>
+		<li>취미 : 
+		<input name="hobby" type="checkbox" name="hobby" value="1"> 잠자기
+		<input name="hobby" type="checkbox" name="hobby" value="2"> 먹기
+		<input name="hobby" type="checkbox" name="hobby" value="3"> 숨쉬기
+		<input name="hobby" type="checkbox" name="hobby" value="4"> 멍때리기
+		</li>
+		<li>성별 : <input name="sex" type="radio"  name="sex" value="male" > Male
+  <input type="radio" name="sex" value="female"checked> Female<br></li>
+  		<li>
+  			여행하고 싶은 장소 : <input type="text" list="contries">
+  			<datalist id='contries'>
+  				<option value="가나"/> 
+  				<option value="브라질"/> 
+  				<option value="말레이시아"/> 
+  			</datalist>
+  		</li>
+		<li><input type="submit" value="확인" />
+				<input type="reset" value="취소"/></li>
+		
+		
+		
+		</ol>
+		</form>
+		</fieldset>
+		
+</body>
+</html>

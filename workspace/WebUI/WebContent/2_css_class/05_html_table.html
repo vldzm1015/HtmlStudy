@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+	table { border: 1px solid silver;}
+	
+	/* 첫번째 행의 배경색 바꾸기 */
+	/*  tr:nth-of-type(1)   > td { background: silver;} */
+	 	
+	/* 첫번째 행의 첫번째 열 배경색 바꾸기 */
+	/*  tr:nth-of-type(1)   > td:nth-of-type(1) { background: silver;} */
+	
+	/* 첫번째 행의 홀수 열 배경색 바꾸기 */
+/* 	  tr:nth-of-type(1)   > td:nth-child(odd) { background: silver;}  */
+	 
+</style>
+</head>
+<body>
+
+
+	<table >
+	<!-- colspan : 열 합치기 -->
+	<!-- rowspan : 행 합치기 -->
+		<tr><td>가</td><td colspan='2'>가</td></tr>
+		<tr><td rowspan='2'>A</td><td>A</td><td>A</td></tr>
+		<tr><td>ㄱ</td><td>ㄱ</td></tr>
+</table>
+<br>
+<br>
+<table >
+	<tr><td colspan='2'>부서명</td><td>전화번호(02+)</td><td>팩스번호(02+)</td></tr>
+	<tr><td colspan='2'>종합상황실</td><td>123-1001~1005</td><td>321-1001</td></tr>
+	<tr><td rowspan='2'>비서실</td><td>비서실장</td><td>123-1111</td><td rowspan='2'>321-1002(사장)<br>321-1003(감사)</td></tr>
+	<tr><td >비서실</td><td >321-1002(사장)<br>321-1003(감사)</td></tr>
+	<tr><td rowspan='3'>홍보실</td><td>홍보실장</td><td>123-1001</td><td rowspan='3'>321-1101</td></tr>
+	<tr><td>홍보부</td><td>123-2001~123-2009</td></tr>
+	<tr><td>국제협력부</td><td>123-1230~1234</td></tr>
+
+</table>
+	
+	
+</body>
+</html>
