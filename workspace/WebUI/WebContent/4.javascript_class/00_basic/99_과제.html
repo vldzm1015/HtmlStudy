@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript">
+	document.write("<table border='1'>");
+
+	var d = new Date(); // 오늘 연월일시분초
+	var mm = d.getMonth() + 1; // 이번달
+	var date = d.getDate(); // 오늘날짜
+	var day = d.getDay(); // 오늘요일
+	var startDate = new Date(d.setDate(0)).getDay();
+	var nextMonth = new Date();
+    nextMonth.setMonth(mm);
+	nextMonth.setDate(0);
+	var lastDate = nextMonth.getDate();
+	//전 달의 마지막 요일
+
+	// 월 구하기
+	document.write("<th colspan = 7>" + mm + "월" + "</th>");
+
+	// 요일 만들기
+	document.write("<tr>");
+	var arr = [ '일', '월', '화', '수', '목', '금', '토' ];
+	for (var i = 0; i < arr.length; i++) {
+		document.write("<td>" + arr[i] + "</td>");
+	}
+	document.write("</tr>");
+
+	// 일자구하기
+	var k=1;
+	 document.write("<tr>");
+     for (var aa = 0; aa < 7; aa++) {
+         if (aa > startDate) {
+             document.write("<td>" + k + "</td>");
+             k = k + 1;
+         } else {
+             document.write("<td>" + " " + "</td>");
+         }
+     }
+
+	for (var i = 0; i < 5; i++) {
+		document.write("<tr>");
+		for (var j = 0; j < 7; j++, k++) {
+			if (k <= lastDate) {
+				document.write("<td>" + k + "</td>");
+			} else document.write("<td>" + " " + "</td>");
+	
+		}
+		document.write("</tr>");
+	}
+	document.write("</table>");
+</script>
+</head>
+<body>
+
+</body>
+</html>

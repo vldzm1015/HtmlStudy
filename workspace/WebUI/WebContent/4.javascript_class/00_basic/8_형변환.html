@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>8_형변환.html</title>
+
+<script type="text/javascript">
+// 1. 형변환
+var n = '0770';
+document.write( Number(n) + '<br/>' );
+document.write( parseFloat(n) + '<br/>' );
+document.write( parseInt(n) + '<br/>' );
+
+var n ='123abc';
+document.write( Number(n) + '<br/>' );
+document.write( parseFloat(n) + '<br/>' );
+document.write( parseInt(n) + '<br/>' );
+
+// 2. 연산 후 형변환
+document.write(123+'4' + '<br/>');
+document.write(123-'4' + '<br/>');
+document.write( '<br/>' + typeof(123+'4'));
+document.write( '<br/>' + typeof(123-'4'));
+
+// 3. 요긴한함수 -> 악마의함수
+var str = 'alert("안녕하세요")';
+alert(str);
+eval(str);
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

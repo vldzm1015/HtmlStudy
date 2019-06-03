@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>2_operator.html</title>
+<script type="text/javascript">
+	//1. ==와 ===의 차이점
+	var num = 10;
+	var str = '10';
+	if (num == str) alert('같다1');
+	else alert('다르다1'); // 값만 단순비교
+	
+	if (num === str) document.write('같다2 <br/>');
+	else document.write('다르다2 <br/>'); //자료형까지비교
+	
+	//2. 실수형 계산주의 !!!
+	document.write( 0.2*3 == 0.6); //false
+	document.write( 0.2*3);
+	document.write( 0.2*10*3 == 0.6*10);
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

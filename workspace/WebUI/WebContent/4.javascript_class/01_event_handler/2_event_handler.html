@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 핸들러 연결 </title>
+<script type="text/javascript">
+
+	/* window.onload = init;
+	
+	function init(){
+		var btn = document.getElementById('btn');
+		btn.onclick = btn_click;
+		
+		function btn_click(){
+			alert('이벤트발생');
+		}
+	} */
+	
+window.onload = function(){
+		document.getElementById('btn').onclick = function(){
+			alert('이벤트발생');
+		}
+	}
+	
+
+</script>
+  </head>
+ <body>
+	<input type='button' value='눌러'  id='btn' />
+ </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> RegExp 객체</title>
+<script type="text/javascript">
+var p = /http(s)?:\/\/([\w-]+\.)+[\w-]+(\/[\w-.\/?%&=]*)?/gi;
+//var p = new RegExp('http(s)?://([\\w-]+\\.)+[\\w-]+(/[\\w-./?%&=]*)?','gi');
+var str = '한 번을 둘러봐야 하는 사이트 http://www.w3schools.com/ 입니다';
+str += ' 또한 집중적으로 봐야하는 사이트 http://jqapi.ru/ 입니다';
+
+
+// (1) match()
+var result = str.match(p)	;
+for (var i = 0; i < result.length; i++) {
+	document.write(result[i]+'<br/>');
+}
+
+// (2) exec()- 결과가 이상함
+var result2;
+while ((result2=p.exec(str)) !=null) {
+	document.write(result2 + "<br/>");
+}
+
+//(3) test()
+var one = '한 번을 둘러봐야 하는 사이트 http://www.w3schools.com/ 입니다';
+var two = ' 또한 집중적으로 봐야하는 사이트 http://jqapi.ru/ 입니다';
+	document.write(p.test(two) + "<br/>");
+	document.write(p.test(one) + "<br/>");
+
+// (4) search()
+	document.write(one.search(p) + "<br/>");
+	document.write(two.search(p) + "<br/>");
+
+
+
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

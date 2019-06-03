@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>6_date.html</title>
+<script type="text/javascript">
+
+//	var d= new Date();
+	/* document.write( d + '<br/>');
+	document.write( typeof(d) + '<br/>');
+	document.write( d.getFullYear() + '<br/>'); // 년
+	document.write( d.getMonth()+1 + '<br/>');  // 월
+	document.write( d.getDate() + '<br/>');		// 일
+	document.write( d.getDay() + '<br/>');		// 요일 (일요일 =0요일) */
+	
+	
+	var d= new Date();
+	d.setFullYear(2019);
+	d.setMonth(5); // (6월 = 5)
+	d.setDate(3)
+	document.write( d + '<br/>');
+	document.write( d.toLocaleString() + '<br/>');  
+	document.write( d.toString() + '<br/>');
+	document.write( d.toDateString() + '<br/>'); 
+	
+	d.setDate(d.getDate()-10);
+	document.write( d.toDateString() + '<br/>');
+	d.setDate(d.getMonth()-10);
+	document.write( d.toDateString() + '<br/>');
+	
+	//전 달의 마지막 날 
+	d.setDate(0);
+	document.write( d.toDateString() + '<br/>');
+	
+	document.write( d.getHours() + '<br/>');  	//시
+	document.write( d.getMinutes() + '<br/>');	//분
+	document.write( d.getSeconds() + '<br/>');	//초
+	
+
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

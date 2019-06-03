@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title> 이벤트 핸들러 연결 </title>
+<script type="text/javascript">
+// 함수형처럼 쓸 때
+/* function btn_click(){
+	alert('이벤트발생')
+} */
+
+
+// 자바스크립트에서는 함수도 자료형이다.
+// 변수선언 가능하다
+// 자료형처럼 쓸 때
+var btn_click = function(){ 
+	alert('이벤트확인');
+	}
+
+
+
+
+</script>
+</head>
+
+<body>
+	<input type='button' value='눌러' onclick='btn_click()' />
+</body>
+</html>

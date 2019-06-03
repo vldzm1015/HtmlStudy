@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>4_string.html</title>
+<script type="text/javascript">
+	var str='너의 삶 속에 나의 삶을 넣어 삶을 영위하자';
+	document.write(str.indexOf('삶') + "<br/>");		 // 3
+	document.write(str.lastIndexOf('삶') + "<br/>");  // 17	
+	document.write(str.indexOf('삶을') + "<br/>");	 // 11	
+	document.write(str.length+ "<br/>"); 			 // 24
+	
+	var msg='자바에서 웹프로젝트까지 열심히 합시다 짝꿍!';
+	document.write(msg.charAt(3) + "<br/>"); 
+	//서(3번째 글자)
+	
+	document.write(msg.slice(5,12) + "<br/>"); 
+	//웹프로젝트까지(5번째 글자부터 12번째 글자까지)
+	
+	document.write(msg.substring(5,12) + "<br/>"); 
+	//웹프로젝트까지(5번째 글자부터 12번째 글자까지)
+	
+	document.write(msg.substr(5,7) + "<br/>"); 
+	//웹프로젝트까지 (5번째 글자에서 부터 7번째 글자까지 프린트)
+	
+	document.write(msg.split(' ') + "<br/>"); 
+	//자바에서,웹프로젝트까지,열심히,합시다,짝꿍!
+	
+	document.write(msg.concat('화이팅') + "<br/>"); 
+	//자바에서 웹프로젝트까지 열심히 합시다 짝꿍!화이팅
+	
+	document.write(msg+ "<br/>"); 
+	//자바에서 웹프로젝트까지 열심히 합시다 짝꿍!
+	
+	
+</script>
+</head>
+<body>
+
+</body>
+</html>

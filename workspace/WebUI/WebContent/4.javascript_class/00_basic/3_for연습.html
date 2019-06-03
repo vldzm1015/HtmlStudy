@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>3_for.html</title>
+<script type="text/javascript">
+	document.write("<table border='1'>");
+	document.write("<tr>");
+	document.write("<td>안녕</td><td>헬로우<td/>");
+	document.write("</tr>");
+	document.write("</table>");
+	
+	
+	document.write("<table border='1'>");
+	for (var i = 0; i < 5; i++) {
+		
+		document.write("<tr>");
+		
+		for (var j =1; j < 6; j++) {
+			document.write("<td>"+((i*5)+j)+"</td>");
+		}
+	}
+	document.write("</tr>");
+	document.write("</table>");
+	
+	
+	
+	
+	document.write("<table border='1'>");
+	var k=1;
+	for (var i = 0; i < 5; i++) {
+		
+		document.write("<tr>");
+		
+		for (var j =1; j < 6; j++, k++) {
+			document.write("<td>"+k+"</td>");
+		}
+	}
+	document.write("</tr>");
+	document.write("</table>");
+	
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
