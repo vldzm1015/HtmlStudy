@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>4_iframe_exmain.html</title>
+<script type="text/javascript">
+
+<!--
+function changeSite(){
+var ra = document.frm.site.value;
+		switch (ra) {
+		case 'daum': document.getElementById('ifrm'). setAttribute('src', 'http://www.daum.net'); break;
+		case 'google': document.getElementById('ifrm'). setAttribute('src', 'https://www.google.co.kr'); break;
+		case 'nate': document.getElementById('ifrm'). setAttribute('src', 'http://www.nate.com'); break;
+		default:
+			break;
+		}
+}
+	
+//--></script>
+</head>
+<body>
+<form name="frm">
+		<input type="radio" name="site" onclick="changeSite()" value='daum'> 다음 
+		<input type="radio" name="site" onclick="changeSite()" value='google'> 구글
+		<input type="radio" name="site" onclick="changeSite()" value='nate'> 네이트 
+</form>
+
+<iframe name='ifrm'	id='ifrm' width="500" height="450" src="">
+</iframe>
+</body>
+</html>

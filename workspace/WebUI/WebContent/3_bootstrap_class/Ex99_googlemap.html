@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+ <meta charset="euc-kr">
+ <title>구글맵 API 활용하기</title>
+ <script src="https://maps.googleapis.com/maps/api/js?sensor=false"></script>
+ <script>
+ function initialize() {
+
+ /*
+		구글 지도에서 목적지를 찾고 오른쪽 마우스에서 '이곳이 궁금한가요?'에서 좌표값을 구한다
+ */
+ var Y_point = 37.520686; // Y 좌표
+ var X_point = 126.732350; // X 좌표
+ var zoomLevel = 17; // 첫 로딩시 보일 지도의 확대 레벨
+ var markerTitle = "목적지"; // 현재 위치 마커에 마우스를 올렸을때 나타나는 이름
+ var markerMaxWidth = 300; // 마커를 클릭했을때 나타나는 말풍선의 최대 크기
+
+ 
+ var myLatlng = new google.maps.LatLng(Y_point, X_point);
+ var mapOptions = {
+ zoom: zoomLevel,
+ center: myLatlng,
+ mapTypeId: google.maps.MapTypeId.ROADMAP
+ }
+ var map = new google.maps.Map(document.getElementById('map_view'), mapOptions);
+
+ var marker = new google.maps.Marker({
+ position: myLatlng,
+ map: map,
+ title: markerTitle
+ });
+
+ var infowindow = new google.maps.InfoWindow(
+ {
+ content: '여기',
+ maxWidth: markerMaxWidth
+ }
+ );
+
+ google.maps.event.addListener(marker, 'click', function() {
+ infowindow.open(map, marker);
+ });
+ }
+ </script>
+</head>
+
+<body onload="initialize()">
+ <div id="map_view" style="width:500px; height:300px;"></div>
+</body>
+</html>

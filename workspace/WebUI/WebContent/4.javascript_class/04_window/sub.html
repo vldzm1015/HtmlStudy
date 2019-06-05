@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>sub.html</title>
+<!--
+	window.onload = function(){
+	var ra = document.frm2.place;
+	for (var i = 0; i < ra.length; i++) {
+		ra[i].onclick = function() {
+			switch (ra.value) {
+			case '0': opener.location.href='http://www.daum.net'; break;
+			case '1': opener.location.href='http://www.naver.com'; break;
+			case '2': opener.location.href='http://www.nate.com'; break;
+			default:
+				break;
+			}
+			window.close();
+		}
+	}
+	
+ //-->
+</head>
+<body>
+	<form name="frm2">
+		<input type="text" name="choose2" ><br> 
+		<h1>지역을 선택하세요</h1>
+		<input type="radio" name="place" value='가산'> 가산 <br> 
+		<input type="radio" name="place" value='판교'> 판교 <br> 
+		<input type="radio" name="place" value='부평'> 부평 <br>
+	</form>
+</body>
+</html>
