@@ -27,15 +27,42 @@
 <meta charset="UTF-8">
 <title> window 예제 </title>
 <script type="text/javascript">
-	function showSite()
-	{
-		/*
-		1. 선택한 값의 인덱스를 얻어온다.
-		2. 각각의 인덱스에 맞는 새로운 창을 연다
-			[예] 인덱스 값이 1이라면 http://www.daum.net으로 창을 연다
-		*/
-	
-	}
+
+	window.onload = function(){
+		
+		var sel = document.frm.chooseSite;
+		sel.onchange = showSite;
+			function showSite()
+			{
+				
+				var winObj = window.open('','window-name',
+						'width=400', 'height=350');
+			
+// 				var idx = sel.selectedIndex;
+// 				if (idx==1) winObj.location.href = 'http://www.daum.net';
+// 				else if(idx==2) winObj.location.href = 'http://www.naver.com';
+// 				else if(idx==3) winObj.location.href = 'http://www.nate.com';
+				var idx = sel.selectedIndex;
+				switch (idx) {
+				case 1:
+					winObj.location.href = 'http://www.daum.net';
+					break;
+				case 2:
+					winObj.location.href = 'http://www.naver.com';
+					break;
+				case 3:
+					winObj.location.href = 'http://www.nate.com';
+					break;
+				default:
+					break;
+				}
+				/*
+				1. 선택한 값의 인덱스를 얻어온다.
+				2. 각각의 인덱스에 맞는 새로운 창을 연다
+					[예] 인덱스 값이 1이라면 http://www.daum.net으로 창을 연다
+				*/				
+			}
+		}	
 </script>
 </head>
 <body>

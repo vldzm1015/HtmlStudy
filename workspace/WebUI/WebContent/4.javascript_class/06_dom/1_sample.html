@@ -4,7 +4,40 @@
 <meta charset="UTF-8">
 <title>DOM에서 노드 검색 방법</title>
 <script type="text/javascript">
-  </script>
+window.onload = function(){
+	
+	document.getElementById('btn').onclick = function(){
+		var result = document.getElementById('result');
+		
+		// 1. id로 얻어오기
+// 		var name = document.getElementById('name');
+// 		result.innerHTML = name.value +"님 반갑습니다.";
+
+		// 1-1 모바일에서 id로 얻어오기
+// 		var name = document.querySelector('#name');
+// 		result.innerHTML = name.value +"님 반갑습니다!";
+		
+		// 2. classname로 얻어오기
+// 		var name = document.getElementsByClassName('cname');
+// 		result.innerHTML = name[0].value +"님 반갑습니다.";
+
+		// 2-1. 모바일에서 classname로 얻어오기
+		var name = document.querySelectorAll('.cname');
+		result.innerHTML = name[0].value +"님 반갑습니다!";
+		
+		// 3. tagname으로 얻어오기
+// 		var name = document.getElementsByTagName('input');
+// 		result.innerHTML = name[0].value +"님 반갑습니다.";
+		
+		// 4. from으로 얻어오기
+// 		var name = document.fm.name;	
+// 		result.innerHTML = name.value + "님 즐주말";
+		
+	}
+	
+}
+
+</script>
 </head>
 
 <body>

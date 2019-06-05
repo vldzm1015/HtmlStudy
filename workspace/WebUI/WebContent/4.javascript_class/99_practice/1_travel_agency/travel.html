@@ -6,11 +6,42 @@
 <link href='css/travel.css' rel='stylesheet' type='text/css'>
 
 <script type="text/javascript">
+window.onload = function(){
+	
+	var frm = document.frm;
+	var adult = document.frm.adult;
+	var child = document.frm.child;
+	var baby = document.frm.baby;
+	
+	
+	// 인원구하기
+	for (var i=0; i <= 10; i++) {
+		frm.adult.add(new Option(i, i));
+		frm.child.add(new Option(i, i));
+		frm.baby.add(new Option(i, i));
+	}
+	
+	// 이벤트
+	adult.onchange = total;
+	child.onchange = total;
+	baby.onchange = total;
+	
+	
+	
+	function total(){
+		document.frm.total.value = adult.value*39000
+		+ child.value*29000 + baby.value*19000;
+	}
+	
+	
+
+}
 		// oninput 이벤트 연결도 가능
 </script>
 </head>
 
 <body>
+<form name="frm">
 <table width="800" border="0" cellspacing="0" cellpadding="0">
   <tr>
     <td><img src="img/travel_01.gif" width="800" height="102" /></td>
@@ -47,24 +78,25 @@
             <td width="20" height="100">&nbsp;</td>
             <td height="100"><table width="540" border="0" cellpadding="3" cellspacing="1" bgcolor="#CCCCCC">
               <tr>
-                <td width="110" height="25" bgcolor="#F7F7F7"> <div align="center"><span class="text1">성인(만12세이상)</span></div></td>
+                <td width="110" height="25" bgcolor="#F7F7F7"> 
+                <div align="center"><span class="text1">성인(만12세이상)</span></div></td>
                 <td width="190" height="25" bgcolor="#FFFFFF">
                   <label>
-                    <input name="textfield" type="text" id="textfield" size="2" />
+                    <select name="adult" id="adult"></select>
                     </label>
                   <span class="text4">명 <span class="text2">[1인당 39.000원]</span></span></td>
                 <td width="80" height="25" rowspan="3" bgcolor="#F7F7F7"><div align="center"><span class="text1">상품합계금액</span></div></td>
                 <td width="100" height="25" rowspan="3" bgcolor="#FFFFFF"><span class="text4">=</span>
-                  <input name="textfield4" type="text" id="textfield4" value="0원" size="10" /></td>
+                  <input name="total" type="text" id="total" value="0원" size="10" /></td>
               </tr>
               <tr>
                 <td width="110" height="25" bgcolor="#F7F7F7"><div align="center"><span class="text1">아동(만12세미만)</span></div></td>
-                <td width="190" height="25" bgcolor="#FFFFFF"><input name="textfield2" type="text" id="textfield2" size="2" />
+                <td width="190" height="25" bgcolor="#FFFFFF"><select name="child" id='child'></select>
                  <span class="text4">명</span><span class="text4"> <span class="text2">[1인당 29.000원]</span></span> </td>
                 </tr>
               <tr>
                 <td width="110" height="25" bgcolor="#F7F7F7"><div align="center"><span class="text1">유아(만 2세이상)</span></div></td>
-                <td width="190" height="25" bgcolor="#FFFFFF"><input name="textfield3" type="text" id="textfield3" size="2" />
+                <td width="190" height="25" bgcolor="#FFFFFF"><select name="baby" id='baby'></select>
                  <span class="text4">명 <span class="text2">[1인당 19.000원]</span></span></td>
                 </tr>
             </table></td>
@@ -185,11 +217,11 @@
                 <td colspan="6">&nbsp;</td>
                 </tr>
               <tr>
-                <td><img src="img/travel_button_01.gif" width="84" height="27" /></td>
+                <td><img src="img/travel_button_01.gif" width="84" height="27" onclick="location.href='08_1_popup_opener.html';"/></td>
                 <td width="2">&nbsp;</td>
-                <td><img src="img/travel_button_02.gif" width="71" height="27" /></td>
+                <td><img src="img/travel_button_02.gif" width="71" height="27" onclick="location.href='08_1_popup_opener.html';" /></td>
                 <td width="2">&nbsp;</td>
-                <td><img src="img/travel_button_03.gif" width="71" height="27" /></td>
+                <td><img src="img/travel_button_03.gif" width="71" height="27" onclick="location.href='08_1_popup_opener.html';" /></td>
               </tr>
               <tr>
                 <td colspan="6">&nbsp;</td>
@@ -206,5 +238,6 @@
     <td height="37" colspan="2" bgcolor="#000000"></td>
   </tr>
 </table>
+</form>
 </body>
 </html>

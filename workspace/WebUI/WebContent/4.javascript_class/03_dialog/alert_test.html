@@ -5,11 +5,30 @@
 <title> Alert Test </title>
 <script type="text/javascript">
 	<!--
-
+	// 1. HTML에서 함수 호출 방식
+	function show_dialog(){
+		alert('check');
+	}
+	
+	// 2. JS 요소 찾아서 이벤트 함수 연결
+	window.onload = function(){
+		
+		// alert -> confirm
+		var result = confirm('이 페이지는 http://playdata.io로 이사하였습니다.\n이동하시겠습니까?');
+		
+		if (result) {
+			location = 'http://playdata.io';
+		}
+		
+		//아래 세가지 다 같은 기능
+// 		window.location.href = 'http://playdata.io';
+// 		location.href = 'http://playdata.io';
+// 		window.location = 'http://playdata.io';
+	}
 	//-->
 </script>
 </head>
-<body onload="show_dialog()">
+<!-- <body onload="show_dialog()"> -->
 이 사이트는 조만간 운영하지 않습니다.
 </body>
 </html>

@@ -4,16 +4,27 @@
 <meta charset="UTF-8">
 <title></title>
 <script type="text/javascript">
-
+window.onload = function(){
+// 	document.myForm.txt0.value='하하';
+// 	document.myForm['txt1'].value='haha';
+	
+	
+	document.getElementById('btn').onclick = function(){
+		// 네 곳의  input 태그에 '데이타'글씨를 지정
+		for(var i=0; i<4; i++){
+			document.myForm['txt'+i].value='data';
+		}
+	}
+}
 </script>
 </head>
 <body>
 	<form name='myForm'>
-		첫번째 :  <input type='text' name='txt0'><br/>
-		두번째 :  <input type='text' name='txt1'><br/>
-		세번째 :  <input type='text' name='txt2'><br/>
-		네번째 :  <input type='text' name='txt3'><br/>
-		<input type='button' value='값지정'  id='btn'>
+		첫번째 : <input type='text' name='txt0'><br /> 
+		두번째 : <input type='text' name='txt1'><br /> 
+		세번째 : <input type='text' name='txt2'><br /> 
+		네번째 : <input type='text' name='txt3'><br />
+		<input type='button' value='값지정' id='btn'>
 	</form>
 </body>
 </html>

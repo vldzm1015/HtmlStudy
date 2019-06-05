@@ -4,6 +4,20 @@
 <meta charset="UTF-8">
 <title> 이벤트 예제 2 </title>
 <script type="text/javascript">
+
+window.onload = function(){
+	var mango = document.frm.mango;
+	var avocado = document.frm.avocado;
+	
+	mango.onchange = cal;
+	avocado.onchange = cal;
+	function cal(){
+		document.frm.total.value = mango.value*4000
+		+avocado.value*5000;
+	}
+	
+	}
+
 </script>
 	
 </head>
@@ -40,7 +54,7 @@
 			</td>
 		</tr>
 		<tr>
-			<td colspan=2> 함계 </td>
+			<td colspan=2> 합계 </td>
 			<td><input type="text" name="total" size=6>원</td>
 		</tr>		
 		<tr>

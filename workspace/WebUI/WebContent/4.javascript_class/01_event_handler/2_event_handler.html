@@ -5,22 +5,22 @@
 <title> 이벤트 핸들러 연결 </title>
 <script type="text/javascript">
 
-	/* window.onload = init;
-	
+	window.onload = init;   // <-이벤트연결
+	//window.onload = init();  <-이벤트호출. 에러발생
 	function init(){
 		var btn = document.getElementById('btn');
-		btn.onclick = btn_click;
+		btn.onclick = btn_click();
 		
 		function btn_click(){
 			alert('이벤트발생');
 		}
-	} */
+	} 
 	
-window.onload = function(){
-		document.getElementById('btn').onclick = function(){
-			alert('이벤트발생');
-		}
-	}
+// window.onload = function(){
+// 		document.getElementById('btn').onclick = function(){
+// 			alert('이벤트발생');
+// 		}
+// 	}
 	
 
 </script>

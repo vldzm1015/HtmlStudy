@@ -2,27 +2,59 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
-<title> 폼 예제 2</title>
+<title>폼 예제 2</title>
 </head>
 <script type="text/javascript">
+	window.onload = function() {
+
+		var bt1 = document.getElementById('up');
+		bt1.onclick = function() {
+			// 		alert('ok');  //이벤트 발생확인
+			var idx = document.frm.play.selectedIndex;
+			var optSel = document.frm.play.options;
+			var str = optSel[idx].text;
+
+			if (idx > 0) {
+				optSel[idx].text = optSel[idx - 1].text;
+				optSel[idx - 1].text = str;
+				optSel[idx - 1].selected = true;
+
+			}
+		}
+
+		var bt2 = document.getElementById('down').onclick = function() {
+			// 		alert('ok'); //이벤트 발생확인
+			var idx = document.frm.play.selectedIndex;
+			var optSel = document.frm.play.options;
+			var str = optSel[idx].text;
+
+			if (idx < optSel.length-1) {
+				optSel[idx].text = optSel[idx + 1].text;
+				optSel[idx + 1].text = str;
+				optSel[idx + 1].selected = true;
+
+			}
+		}
+
+	}
 </script>
 <body>
 
-내가 제일 좋아하는 놀이 순서대로 한다면 <br>
+	내가 제일 좋아하는 놀이 순서대로 한다면
+	<br>
 
-<form name="frm">
-<select name="play" size="8">
-	<option selected> 숨쉬기 </option>
-	<option> 밥먹기 </option>
-	<option> 그냥있기 </option>
-	<option> 잠자기 </option>
-	<option> 술먹기 </option>
-	<option> 멍때리기 </option>
-</select> <br>
+	<form name="frm">
+		<select name="play" size="6">
+			<option selected>숨쉬기</option>
+			<option>밥먹기</option>
+			<option>그냥있기</option>
+			<option>잠자기</option>
+			<option>술먹기</option>
+			<option>멍때리기</option>
+		</select> <br> <input type="button" id='up' value="▲"><br>
+		<br> <input type="button" id='down' value="▼"><br>
+		<br>
+	</form>
 
-<input type="button" id='up'	value="▲"><br><br>
-<input type="button" id='down'	value="▼"><br><br>
-</form>
-
-</body> 
+</body>
 </html>
