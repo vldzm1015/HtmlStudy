@@ -1,0 +1,9 @@
+1. 화면에 깨지는 경우가 있는데
+
+base.css 파일의 import가 인식을 못해서
+
+index.html에서 reset.css와 common.css를 직접 연결하면 된다.
+
+
+
+
