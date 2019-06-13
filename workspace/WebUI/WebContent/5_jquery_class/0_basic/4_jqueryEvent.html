@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>jquery event</title>
+
+<style type="text/css">
+	.bg { background : yellow; }
+	.border { border : 3px dotted red; }
+</style>
+
+<script type="text/javascript" src="../lib/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+$(function(){
+	
+	// 이벤트 검색
+	// bind : 누를때마다 이벤트발생
+	// one : 요소마다 한번씩 이벤트발생
+// 	$('li').bind('click', function(){
+// 		$('#result').text($(this).text());
+// 	});
+	
+// 	$('li').one('click', function(){
+// 		$('#result').text($(this).text());
+// 	});
+
+	// 축약형
+	$('li').click(function(evt){
+		
+		$('#result').text($(this).text());
+		// 콘솔로 이벤트 확인
+// 		for (var prop in evt) {
+// 			console.log(prop + ":" + evt[prop]);
+// 		}	
+	});
+	
+	
+	// 동적으로 추가된 요소는 이벤트가 적용되지 않음
+	$('h1').click(function(){
+		var li = $('<li/>').text(new Date);
+		$('ul').append(li);
+	});
+	
+	$('h1').click(function(){
+	$('h1').css('cursor', 'pointer');
+	});
+	
+	
+	// 동적으로 추가된 요소에 이벤트 적용
+	// live() : 1.7이전 -> 이제 안쓰임
+	// on() : 1.7이후 사용됨
+	
+	$('ul').on('click','li', function(){
+		$('#result').text($(this).text());
+	});
+	
+	
+});
+
+
+</script>
+</head>
+<body>
+	<h1>제이쿼리 이벤트</h1>
+	 <ul>
+		<li>부에노스 아이레스</li>
+		<li>바르셀로나</li>
+		<li>리마</li>
+		<li>라파스</li>
+	 </ul>	
+	<div id="result"></div>
+</body>
+</html>

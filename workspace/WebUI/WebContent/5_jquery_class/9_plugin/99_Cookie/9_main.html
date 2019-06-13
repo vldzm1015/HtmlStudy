@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>메인페이지</title>
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-3.4.1.js"></script>
+<script type="text/javascript" src="js/jquery.cookie.js"></script>
+<script type="text/javascript">
+//지정된 쿠키값을 얻어오기 -> 해당 값이 없을때만 창 띄우기
+$(function(){
+	
+	if($.cookie('check') !='ok'){
+	window.open("9_promotion.html","","width=400, height=360");
+}
+	
+});
+
+</script>
+
+
+</head>
+<body>
+	<h2>우리 메인 페이지입니다.</h2>
+</body>
+</html>

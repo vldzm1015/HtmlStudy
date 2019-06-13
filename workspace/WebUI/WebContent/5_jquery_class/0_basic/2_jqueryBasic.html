@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8"/>
+	<title> 첫 연습 </title>
+	<style type="text/css">
+		.active { border: 2px solid red; }
+	</style>
+	<script type="text/javascript" src="../lib/jquery-3.4.1.min.js"></script>
+	<script type="text/javascript">
+	$(function(){
+		//1. 첫번째 목록에서 남자는 빨간색 여자는 하늘색 지정
+		$('.man').css({'background':'pink'});
+		$('.woman').css({'background':'blue'});
+		
+		//2. CSS와 연결
+		var ins = $('.inputText');
+		ins.focus(function(){
+			$(this).addClass('active');
+		});
+		ins.blur(function(){
+			$(this).removeClass('active');
+		});
+		
+		// 3. 자바 스크립트 innerHTML 유사한 역할
+		//	[특성] jquery 는 getter 와 setter가 동일
+		//	ex)	text() = setter    text(ahhah) = getter
+		
+		//태그와 태그사이에 글씨를 넣음
+		$('#divText').text('<img src="images/puppy.jpg">');
+		// 실제 이미지가 들어감
+		$('#divHtml').html('<img src="images/puppy.jpg">');
+		$('#divEmpty').empty();
+		
+		
+		// 4. 속성 : attr()
+		// changeGrim 요소의 속성 (attr())을 'images/cat.jpg'
+		$('#changeGrim').attr('src','images/cat.jpg');
+		
+		
+		// val() : value를 얻어오거나 지정하는 함수
+		// 텍스트 필드에 '나는홍길동' 지정
+		$('#tf').val('나는홍길동');
+		
+		// 텍스트에어리어에 '작정중' 지정
+		$('#ta').val('작성중');
+		
+		// 콤보박스에 '인천' 지정
+		$('#sel').val('incheon');
+		
+		// 리스트에서는 '제주도', '독도' 지정
+		$('#sel_m').val(['seom1','seom3']);
+		
+		// 라디오 버튼에서 여자 지정
+		var gender = $('input[name="gender"]');
+		gender.eq(1).attr('checked',true);
+		
+		// 확인 버튼이 눌렸을 때 사용자가 입력하거나 지정한 모든 값들을
+		//  <div id='result'></div>에  출력하기
+		$('#check').click(function(){
+			$('#result').text([
+				$('#tf').val(),
+	 			$('#ta').val(),
+	 			$('#sel').val(),
+	 			$('#sel_m').val(),
+	 			$('input[name="gender"]').val()]
+			);			
+		});
+		
+		// 5. 동적 구조 변경
+		var actor =$('#actor');
+		var tae =$('#tae');
+		var su =$('#su');
+		var bin =$('#bin');
+		
+		actor.append(tae);
+		su.appendTo(actor);
+		
+		//  동적으로 태그추가
+		var n = $('<div/>');
+		n.text('newActor');
+		actor.append(n);
+		
+		actor.append('<div id="old">헌배우</div>');
+		
+		// 앞에 쓰려면 무조건 객체여야함
+		$('<div id="old">헌배우2</div>').appendTo(actor);
+		
+		
+		// 6. 복수개 요소인 경우
+		$(".data").each(function(){
+			$(this).click(function(){
+				alert($(this).text());
+			});
+		});
+	});
+	</script>
+
+</head>
+<body>
+	<!--  1 -->
+	<ul>
+		<li class="man">김수현</li>
+		<li class="woman">김희애</li>
+		<li class="woman">송혜교</li>
+		<li class="man">하정우</li>
+		<li class="woman">김태희</li>
+	</ul>
+	<!-- 2 -->
+	<input type="text" class="inputText"/>
+	<input type="text" class="inputText"/>
+	<input type="text" class="inputText"/>
+	
+
+	<!-- 3 -->
+		<div id="divText">여기에 글씨를</div>
+		<div id="divHtml">여기에 그림을</div>
+		<div id="divEmpty">여기를 비움</div>
+		<p>
+		<img src="images/puppy.jpg" id='changeGrim'>
+		</p>
+		
+	<!-- 4 -->	
+		<p>
+		<input id="tf" type="text" size="20" />
+		<textarea id="ta" rows="3" cols="20"></textarea>
+		<select id="sel">
+			<option value="seoul">서울</option>	<!-- option에 value 값 없어도 됨 -->
+			<option value="busan">부산</option>
+			<option value="masan">마산</option>
+			<option value="incheon">인천</option>
+		</select>
+		<select id="sel_m" multiple="multiple">
+			<option value="seom1">제주도</option>
+			<option value="seom2">울릉도</option>
+			<option value="seom3">독도</option>
+			<option value="seom4">거제도</option>
+		</select>
+		<input type="radio" name="gender" value="m">남자
+		<input type="radio" name="gender" value="w">여자
+		<input type='button' id='check' value='확인'/>
+		<input type='button' id='sel' value='초기화'/> 
+		<!--  [과제] 클릭시 값 지정하려면  -->
+		<div id='result'></div>
+		</p>
+		
+	<!-- 5 -->
+		<div id="actor">배우</div>
+		<div id="tae">김태희</div>
+		<div id="su">김수현</div>
+		<div id="bin">현빈</div>
+		<!-- [ 과제 ] 동적 테이블 만들기  -->
+
+	<!-- 6 -->
+		<div class="data">이름</div>
+		<div class="data">직업</div>
+		<div class="data">나이</div>
+
+	
+</body>
+</html>

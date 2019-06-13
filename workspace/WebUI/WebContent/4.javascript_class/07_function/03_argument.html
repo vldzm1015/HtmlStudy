@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>함수의 인자</title>
+<script type="text/javascript">
+/* 1. 함수의 인자는 개수를 체크하지 않는다. */
+function multiple(first, second){
+	return first*second;
+}
+document.write('곱1 : ' + multiple(2,4) + '<br/>');
+// 문법상 이상 없음 
+document.write('곱2 : ' + multiple(2,4,3) + '<br/>');
+//문법상 이상 없음 .  3개를 보냈으나 앞에 두 숫자만 곱해짐
+document.write('곱3 : ' + multiple(2) + '<br/>');
+//문법상 이상 없음. 하나만 보내서 값은 나오지 않음.(NaN)
+
+/* 2. 여러개의 인자 (파라미터)를 익명의 개체로 받음 */
+	function mul(args){
+	return args.first * args.second;
+}
+	document.write('곱3 : ' + mul({first:3,second:4}) + '<br/>');
+	
+/* 3. argements 특별한 개체 */
+function func(){
+	console.log( arguments );
+}
+func(1);
+func(2,3);
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

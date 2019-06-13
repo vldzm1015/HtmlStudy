@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>jquery.cookie</title>
+<script type="text/javascript"   src="http://code.jquery.com/jquery-3.4.1.js"></script>
+<script type="text/javascript"   src="js/jquery.cookie.js"></script>
+<script type="text/javascript">
+$(function(){
+	
+	// 쿠키에 저장된 값 가져오기
+	$('#txtMail').val($.cookie('kkkk'));
+	
+	
+	$('#btnSave').click(function(){
+		
+// 		var temp = $("#txtMail").val();
+		$.cookie('kkkk',$("#txtMail").val(),{expire:1});
+		$("#txtMail").val('');
+	});
+});
+</script>
+</head>
+<body>
+<form method="POST" action="">
+  메일 어드레스：
+  <input id="txtMail" type="email" size="50" />
+  <input id="btnSave" type="button" value="송신" />
+</form>
+</body>
+</html>

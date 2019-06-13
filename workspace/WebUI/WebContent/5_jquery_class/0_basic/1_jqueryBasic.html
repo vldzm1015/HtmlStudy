@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+
+<title>첫 연습</title>
+<style type="text/css">
+	#here{
+		position:absolute;
+		top: 0;
+		left: 0;
+	}
+</style>
+<script  src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="../lib/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+	$(function(){
+		var here = $('#here');
+		
+// 		here.fadeOut(1000).fadeIn('slow');
+// 		here.slideUp('slow').slideDown(1000);
+		here.animate({top:200, left:400});
+	
+		// id 아래 있는 id 찾기
+		var student = $('#student');
+		var name = student.find('#name');
+		name.css({'background':'#AAFF33',
+			'color' :'#777777',
+			'font_size' : '12pt'});
+		
+		
+// 		'background','#AAFF33'
+// 		color :#777777
+// 		font_size : 12pt
+		
+/*	// 이벤트확인
+		$('#here').click(function(){
+			$('#here').text('클릭하면 내용변경');
+		});
+		$('#here').mouseenter(function(){
+			$('#here').text('마우스가들어옴');
+		});
+		$('#here').mouseleave(function(){
+			$('#here').text('마우스가나감');
+		});
+		$('#here').hover(function(){
+			here.css('border','3px solid green');
+		}, function(){
+			here.css('birder', '2px dashed yellow')
+		});*/
+	});				
+</script>
+</head>
+<body>
+
+
+	<div id="here">아자아자 제이쿼리~~!!!</div>
+
+
+	<div id="student">
+		<div id="name">홍길동</div>
+		<div id="age">34</div>
+	</div>
+
+
+
+</body>
+</html>
