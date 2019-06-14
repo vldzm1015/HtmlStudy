@@ -18,8 +18,25 @@
 		};
 
 		// 자식클래스
-
-
+		var Dog = function(){};
+		Dog.prototype = new Animal(); //상속
+		
+		var dog = new Dog(); // (1)객체생성
+		
+		// (2)오버라이딩
+		Dog.prototype.sound = function(){
+			document.writeln('멍멍짖다<br/>');
+		}
+		dog.sound();
+		
+		
+		dog.move();
+		
+		// (3)새로운 객체 추가
+		Dog.prototype.tail = function(){
+			document.writeln('꼬리를 흔들다 <br/>');
+		}
+		dog.tail();
 
 	</script>
 </body>

@@ -4,8 +4,70 @@
 	<meta charset="UTF-8">
 	<title>자바스크립트 변수와 범위</title>
 	<script>
-
+	/* 1. 글로벌 변수와 지역변수 */
+// 	var scope ='글로벌변수';
+// 	function getValue(){
+// 		var scope ='지역변수';
+// 		return scope;
+// 	}
+// 	document.write('1> ' + getValue() +'<br/>');	//지역변수
+// 	document.write('2> ' + scope +'<br/>');		//글로벌변수
+	
+	/* 2. var 생략 가능 : var 생략 시 글로벌 변수가 된다.  */
+	scope1 ='글로벌변수';
+	function getValue1(){
+		scope1 ='지역변수';
+		return scope1;
+	}
+	document.write('1> ' + getValue1() +'<br/>');	//지역변수
+	document.write('2> ' + scope1 +'<br/>');		//지역변수
+	
+	scope2 ='글로벌변수';
+	function getValue2(){
+		document.write('0> '+scope2+'<br/>');	// undefined
+		var scope2 ='지역변수';
+		return scope2;
+	}
+	document.write('3> ' + getValue2() +'<br/>');	//지역변수
+	document.write('4> ' + scope2 +'<br/>');		//글로벌변수
+	
+	
+	/* 3. 지역변수 범위 */
+	if(true){
+		var i = 100;
+	}
+	document.write('i=' + i + '<br/>');		// i = 100
+	
+	function test(){
+		var j = 1000;
+	}
+	test();
+// 	document.write('j= ' + j + '<br/>');	// j = 에러남. j is not defined
+	
+	for(var k=0; k<3; k++){}
+	for(var k=0; k<3; k++){}
+	
+	var k=10;
+	var k=100;
+	document.write('k= '+ k + '<br/>');	// k = 100 <-변수가 덮어짐
+	
+	/* 호이스팅 (hoisting) 
+	  - 변수가 자신이 속한 블록 안에 있지 않고 밖으로 끌어올려지는 현상 */
+	function doA(num){
+		document.write('before : ' + value + '<br/>');
+		if (num%10 === 0) {
+			var value = true;
+		}
+		document.write('after : ' + value + '<br/>');
+	}
+	doA(10);
 	</script>
+	
+<!-- 
+	ECMA Script 6 (ES6)
+	
+	var 사용 자제 -> let 사용권장
+ -->
 </head>
 
 <body>

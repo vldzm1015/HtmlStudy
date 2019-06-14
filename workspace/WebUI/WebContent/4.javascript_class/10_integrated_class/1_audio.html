@@ -9,13 +9,32 @@ input{
 }
 </style>
 <script type="text/javascript">
+var audio = new Audio('/WebUI/media/bb.mp3');
+var togglePlay = function(){
+	var control = document.gerElementById('control');
+	if (audio.paused || audui.ended) {
+		audio.play();
+		control.innerHTML ='일시정지';
+	}else{
+		audio.pause();
+		control.innerHTML ='재생';
+	}
+	
+}
 
 </script>
 
 </head>
 <body>
+<audio controls>
+<!--   <source src="/WebUI/media/bb.mp3" type="audio/mpeg"> // 절대경로 -->
+  <source src="../../media/bb.mp3" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio>
+
+
 <div id="player">
-	<img src="../images/sample/sensitive.jpg" id="img"/><br/>
+	<img src="../../images/sample/sensitive.jpg" id="img"/><br/>
 	<button id="control" onclick="togglePlay()">play</button>
 	<button id="mute" onclick="toggleMute()">mute</button>
 </div>

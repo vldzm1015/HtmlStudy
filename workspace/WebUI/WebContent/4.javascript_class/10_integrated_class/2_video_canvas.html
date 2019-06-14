@@ -10,11 +10,21 @@ canvas{
 </style>
 <script type="text/javascript">
 
+window.onload = function(){
+	var video = document.getElementById('video');
+	var canvas = document.getElementById('canvas');
+	
+	canvas.addEventListener('click', function(){
+		var ctx = canvas.getContext('2d');
+		ctx.drawImage(video,0,0,320,240);
+	});
+}
+
 </script>
 </head>
 <body>
 <video width="320" height="240" controls="controls"  id="video">
-	<source src="../media/BigBuck.m4v" type="video/mp4"></source>
+	<source src="../../media/aa.mp4" type="video/mp4"></source>
 	<source src="../media/BigBuck.theora.ogv" type="video/ogg"></source>
 	<source src="../media/BigBuck.webm" type="video/webm"></source>
 	Your browser does not support the video tag.

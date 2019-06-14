@@ -2,11 +2,60 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>리터럴 함수</title>
+	<title>함수 문법</title>
 </head>
 <body>
 	<script>
-
+	/* 1. function 명령은 정적인 구조
+	      function 생성자와 함수리터럴은 실행시 판단한다.*/
+	/*
+	// 1. function 명령  //가장 고전적 함수선언*
+	document.write('삼각형의 넓이 : ' + triangle(3,4) + "<br/>");
+	function triangle(base, height){
+		return base*height/2;
+	}
+	
+	// 2. function 생성자  //잘안쓰임	
+	//에러남 - 실행할 때 선언됨. 	 -> 함수 선언을 먼저 해줘야함
+	document.write('삼각형의 넓이2 : ' + triangle2(3,4) + "<br/>");
+	var triangle2 = new Function('base','height',
+	'return base*height/2');
+	
+	// 3. 함수 리터럴 (*리터럴 : 변수의 값)  // 자바스크립트에서 가장 잘쓰임 
+	//에러남 - 실행할 때 선언됨.  -> 함수 선언을 먼저 해줘야함
+	document.write('삼각형의 넓이3 : ' + triangle3(3,4) + "<br/>");
+	var triangle3 = function(base,height){
+		return base*height/2;
+	}*/
+	
+	
+	
+	/* 2. 함수도 데이타타입(자료형)이다. */
+	var triangle3 = function(base,height){
+		return base*height/2;
+	}
+	document.write('삼각형의 넓이3 : ' + triangle3(3,4) + "<br/>");
+	document.write('변수 : ' + triangle3 + "<br/>");
+	triangle3='문자로변환';
+	document.write('변수 : ' + triangle3 + "<br/>");
+	
+	/* 3. 함수도 배열에 저장*/
+	
+	function doA(){
+		document.write('함수 A <br/>');
+	} 
+	function doB(){
+		document.write('함수 B <br/>');
+	} 
+	
+	var arr = [doA, doB];
+	document.write('함수배열 : ' + arr + '<br/>');	
+	
+	// arr 에서 호출
+	arr[0]();
+	arr[1]();
+	
+	
 	</script>
 </body>
 </html>

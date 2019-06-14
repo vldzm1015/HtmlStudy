@@ -4,6 +4,22 @@
 	<meta charset="UTF-8">
 	<title>자바스크립트 함수 만들기</title>
 	<script>
+	// 1. function 명령  //가장 고전적 함수선언*
+	function first(){
+		var txt = document.getElementById('first');
+		txt.style.backgroundColor='red';
+		txt.style.color='yellow';
+	}
+	
+	// 2. function 생성자  //잘안쓰임
+	var second = new Function("var txt = document.getElementById('second');txt.style.backgroundColor='red';txt.style.color='yellow'");
+	s
+	// 3. 함수 리터럴 (*리터럴 : 변수의 값)  // 자바스크립트에서 가장 잘쓰임
+	var third = function(){
+		var txt = document.getElementById('third');
+		txt.style.backgroundColor='red';
+		txt.style.color='yellow';
+	}
 
 	</script>
 </head>
@@ -12,7 +28,7 @@
 	<p> <span id="first"> function 명령 </span>
 		<input type="button" value="확인" onclick="javascript:first()"/>
 	</p>
-	<p> <span id="second"> Function 생성자 </span>
+	<p> <span id="second"> function 생성자 </span>
 		<input type="button" value="확인" onclick="javascript:second()"/>
 	</p>
 	<p> <span id="third"> 함수 리터럴 </span>

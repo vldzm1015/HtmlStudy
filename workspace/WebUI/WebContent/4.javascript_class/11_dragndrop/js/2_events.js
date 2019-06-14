@@ -25,6 +25,7 @@ window.onload = function(){
 		e.preventDefault();
 		e.dataTransfer.dropEffect = "move";
 	});
+	
 	tree.addEventListener("drop", function(e) {
 		e.preventDefault();
 		//---------------------------------------------------

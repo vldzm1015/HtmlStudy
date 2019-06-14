@@ -14,14 +14,27 @@
 	var progress = document.getElementById("progress");
 	var current = 0;
 	
-	var intervalId = setInterval(updateProgress, 100);
 	
-	function updateProgress(){
+	/* 
+	- setTimeout(func, time) : time 지난 후에 한 번 func 함수 실행. 한번만 호출
+	- setInterval(func,time) : 매 time 마다 func 함수 실행. 여러번호출	
+	*/
+// 	var intervalId = setInterval(updateProgress, 100);
+	
+// 	function updateProgress(){
+// 		progress.value = current++;		
+// 		if(current==100){
+// 			clearInterval(intervalId);
+// 		}
+// 	}
+	
+	// 위와 같다.
+	var intervalId = setInterval(function (){
 		progress.value = current++;		
 		if(current==100){
 			clearInterval(intervalId);
 		}
-	}
+	}, 100);
 
 
 </script>

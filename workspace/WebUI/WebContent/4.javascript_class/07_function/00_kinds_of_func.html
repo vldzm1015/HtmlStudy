@@ -4,6 +4,23 @@
 	<meta charset="UTF-8">
 	<title>자바스크립트 함수 3가지</title>
 	<script>
+	// 1. function 명령  //가장 고전적 함수선언*
+	function triangle(base, height){
+		return base*height/2;
+	}
+	document.write('삼각형의 넓이 : ' + triangle(3,4) + "<br/>");
+	
+	// 2. function 생성자  //잘안쓰임
+	var triangle2 = new Function('base','height',
+			'return base*height/2');
+	
+	document.write('삼각형의 넓이2 : ' + triangle2(3,4) + "<br/>");
+	
+	// 3. 함수 리터럴 (*리터럴 : 변수의 값)  // 자바스크립트에서 가장 잘쓰임
+	var triangle3 = function(base,height){
+		return base*height/2;
+	}
+	document.write('삼각형의 넓이3 : ' + triangle3(3,4) + "<br/>");
 
 	</script>
 </head>

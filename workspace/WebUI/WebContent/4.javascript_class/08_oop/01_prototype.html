@@ -3,6 +3,50 @@
 <head>
 	<meta charset="UTF-8">
 	<title> Javascript 객체지향 </title>
+<script type="text/javascript">
+// 1. 클래스 선언 - 생성자 함수를 이용
+// 		변수명을 첫글자 대문자로 권장
+
+var Student =function (name, kor, eng, math){
+	this.name = name;
+	this.kor = kor;
+	this.eng = eng;
+	this.math = math;
+	
+}
+
+
+// 동적 메소드 추가 -> prototype 선언
+// Student.prototype.display= function(){
+// 	return this.name + '님 ' + this.kor + '/' + this.eng + '/' + this.math;
+// }
+// Student.prototype.sum = function(){
+// 	return this.kor+this.eng+this.math;
+// }
+
+// 함수를 두 개 이상 사용할 때 주로 사용
+// var obj = {key:value , key2 : value2 };
+Student.prototype = {
+		sum : function(){
+			return this.kor+this.eng+this.math;
+		}, 
+		display : function(){
+			return this.name + '님 ' + this.kor + '/' + this.eng + '/' + this.math;
+		}
+}
+
+var s1 = new Student("홍길동",90,80,70);
+document.write(s1.name+" 총점 : " + s1.sum() +'<br/>');
+document.write(s1.display()+ '<br/>');
+
+var s2 = new Student("홍길자",99,88,77);
+document.write(s2.name+" 총점 : " + s2.sum() +'<br/>');
+document.write(s2.display() + '<br/>'); // 동적 추가 메소드 호출
+
+console.log(s1);
+console.log(s2);
+
+</script>
 </head>
 <body>
 <script>
