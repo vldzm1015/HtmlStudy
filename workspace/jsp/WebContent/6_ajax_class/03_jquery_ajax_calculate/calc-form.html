@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Ajax 계산기</title>
+	<script type="text/javascript" 
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript">
+	$(function(){
+// 		document.forms[0].onsubmit = function(){
+// 			alert('ok2');
+// 			return false; //기존의 submit 이벤트 기능을 막음. 
+// 		};
+
+		$('form').submit(function(){
+			
+			//alert('ok2');
+			
+			//jquery 방식
+			$.ajax({
+				type : 'get',
+				url : './jsp/calc-action.jsp',
+				data : { 
+					'op1' : $('#op1').val() , 
+					'op2' : $('#op2').val() ,
+					'opr' : $('#opr').val()
+				},
+				dataType : 'text',
+				success : function(data){
+					$("#result").text(data);
+				},
+				error : function(e){
+					alert('error' + e );
+				}
+			});
+			return false;
+		
+		});
+		
+	});
+	
+	</script>
+</head>
+<body>
+
+	<form action="./jsp/calc-action.jsp" method="get">
+	<input name="op1" id='op1' size="3">
+	<select name="opr" id='opr'>
+		<option>+</option>
+		<option>-</option>
+		<option>*</option>
+		<option>/</option>
+		<option>%</option>
+	</select>
+	<input name="op2" id='op2' size="3">
+	<input type="submit" value=" = ">
+	</form>
+	<fieldset>
+		<legend>실행결과</legend>
+		<div id="result"></div>
+	</fieldset>
+
+</body>
+</html>

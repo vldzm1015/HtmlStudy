@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.*;
 
 public class MemberDao {
 
@@ -94,7 +95,32 @@ public class MemberDao {
 		boolean flag = false;
 		
 		try{
-
+			 // 0. 연결 객체 얻어오기	
+			con = DriverManager.getConnection(dbUrl, dbUser ,dbPass);
+			
+			
+			 // 1. sql 문장 만들기 ( insert문 )
+			String sql = "SELECT ID FROM MEMBERTEST WHERE ID = ?";
+			
+			
+			 // 2. sql 전송 객체 만들기	
+			PreparedStatement st = con.prepareStatement(sql); 
+			st.setString(1, id);
+			
+			
+			 // 3. sql 전송
+			ResultSet rs = st.executeQuery();
+			if(rs.next()) {
+//			System.out.println(rs.getString("ID"));;
+				flag = true;
+			}
+			
+			 // 4. 객체 닫기
+			 st.close();
+			 rs.close();
+			 con.close();
+			 
+			 
 			
 		}catch( Exception ex ){
 			throw new MemberException("중복아이디 검사시 오류  : " + ex.toString() );			

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Ajax 계산기 XML </title>
+	<script type="text/javascript" 
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script type="text/javascript">
+	$(function(){
+
+		$('form').submit(function(){
+		
+			$.ajax({
+				type : 'get',
+				url : './jsp/calc-action-xml.jsp',
+				data : { 
+					'op1' : $('#op1').val() , 
+					'op2' : $('#op2').val() ,
+					'opr' : $('#opr').val()
+				},
+				dataType : 'xml', // xml 형식 분명히 지정
+				success : function(data){
+					var res = $(data).find('result').text();
+					$("#result").text(res);
+				},
+				error : function(e){
+					alert('error' + e );
+				}
+			});
+			return false;
+		
+		});
+		
+	});
+	
+	</script>
+</head>
+<body>
+
+	<form action="./jsp/calc-action.jsp" method="get">
+	<input name="op1" id="op1" size="3">
+	<select name="opr" id="opr">
+		<option>+</option>
+		<option>-</option>
+		<option>*</option>
+		<option>/</option>
+		<option>%</option>
+	</select>
+	<input name="op2" id="op2" size="3">
+	<input type="submit" value=" = ">
+	</form>
+	<fieldset>
+		<legend>실행결과</legend>
+		<div id="result"></div>
+	</fieldset>
+
+</body>
+</html>
