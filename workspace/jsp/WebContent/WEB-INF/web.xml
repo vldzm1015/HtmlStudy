@@ -2,11 +2,47 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
   <display-name>jsp</display-name>
   <welcome-file-list>
-    <welcome-file>index.html</welcome-file>
-    <welcome-file>index.htm</welcome-file>
     <welcome-file>index.jsp</welcome-file>
-    <welcome-file>default.html</welcome-file>
-    <welcome-file>default.htm</welcome-file>
-    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>main.jsp</welcome-file>
+    <welcome-file>boardMvc.jsp</welcome-file>
   </welcome-file-list>
+  
+  <!-- 서블릿 등록  -->
+  <servlet>
+  	<servlet-name>SimpleControl</servlet-name>
+  	<servlet-class>mvc.simple.SimpleControl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>SimpleControl</servlet-name>
+  	<url-pattern>/SimpleControl</url-pattern>
+  	<url-pattern>/simple</url-pattern>
+  	<url-pattern>*.kmh</url-pattern>
+  </servlet-mapping>
+  
+  <!-- 방명록 서블릿  -->
+<servlet>
+	<servlet-name>GuestControl</servlet-name>
+	<servlet-class>mvc.guest.control.GuestControl</servlet-class>
+</servlet>
+  
+<servlet-mapping>
+	<servlet-name>GuestControl</servlet-name>
+	<url-pattern>/guest</url-pattern>
+	<url-pattern>*.do</url-pattern>
+</servlet-mapping>
+
+  
+ <!-- 게시판 서블릿  --> 
+  <servlet>
+	<servlet-name>BoardControl</servlet-name>
+	<servlet-class>board.control.mvc.BoardControl</servlet-class>
+</servlet>
+  
+<servlet-mapping>
+	<servlet-name>BoardControl</servlet-name>
+	<url-pattern>/board</url-pattern>
+	<url-pattern>*.go</url-pattern>
+</servlet-mapping>
+
 </web-app>
+

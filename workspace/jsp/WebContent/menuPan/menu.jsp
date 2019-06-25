@@ -22,6 +22,7 @@
          var ordertotal = num *price; // 주문한 메뉴 총액 구하기
          var sum = 0;
          sum += ordertotal;
+        
          
          $('#total').val(sum);
          var deletekey ="<input type='button' class='delete' value='삭제하기'/>"; //삭제버튼 만들기

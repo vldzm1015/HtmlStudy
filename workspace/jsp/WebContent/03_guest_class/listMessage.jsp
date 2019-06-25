@@ -13,7 +13,7 @@
 	
 	// 페이지 번호 받기
 	String pNum = request.getParameter("page");
-
+	
 	// 전체 메세지 레코드 검색 
 	List <Message> mList =  listService.getMessageList(pNum);
 
