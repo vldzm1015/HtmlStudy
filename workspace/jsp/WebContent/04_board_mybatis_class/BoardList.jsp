@@ -1,11 +1,9 @@
-a<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 
     pageEncoding="UTF-8"%>
 
-<%@ page import="board.model.*, board.service.*" %>
-
-<%@ page import="java.util.List" %>
-
+<%@ page import="mybaties.board.model.*, mybaties.board.service.*" %>    
+<%@ page import="mybaties.board.service.BoardService" %> 
 <%@ page import="java.util.*,java.text.*" %>
 
 
@@ -44,7 +42,7 @@ a<%@ page language="java" contentType="text/html; charset=UTF-8"
 
 	 String	pNum = request.getParameter("page");
 
-	 System.out.println(pNum);
+
 
 	 if(pNum!=null && pNum.equals("all")){mList= service.getArticleList();}
 

@@ -1,18 +1,11 @@
-package board.service;
-
-
+package mybaties.board.service;
 
 import java.util.*;
 
-
-
-import board.model.BoardDao;
-
-import board.model.BoardException;
-
-import board.model.BoardRec;
-
-
+import mybaties.board.service.ListArticleService;
+import mybaties.board.model.BoardDao;
+import mybaties.board.model.BoardException;
+import mybaties.board.model.BoardRec;
 
 public class ListArticleService {
 

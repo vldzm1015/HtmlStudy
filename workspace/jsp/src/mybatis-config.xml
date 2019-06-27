@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<!DOCTYPE configuration     PUBLIC "-//mybatis.org//DTD Config 3.0//EN"     "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+<!-- db connect file -->
+<properties resource="db.properties"></properties>
+
+<!-- 기타설정 -->
+<settings>
+	<setting name="mapUnderscoreToCamelCase" value="true"/>
+</settings>
+<!-- alias 별칭  -->
+<typeAliases>
+	<typeAlias type="mybaties.guest.model.Comment" alias="comment"/>
+	<!-- 추가 -->
+</typeAliases>
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC" />
+			<dataSource type="POOLED">
+				<property name="driver" value="${driver}" />
+				<property name="url" value="${url}" />
+				<property name="username" value="${username}" />
+				<property name="password" value="${password}" />
+			</dataSource>
+		</environment>
+	</environments>
+	<mappers>
+		<mapper resource="mybaties/guest/model/mapper/CommentMapper.xml" />
+		<!-- 다른 mapper 추가 -->
+		<mapper resource="mybaties/board/model/mapper/BoardMapper.xml" />
+	</mappers>
+</configuration>

@@ -31,7 +31,7 @@ public class BoardControl extends HttpServlet {
 		commandMap = new HashMap();
 
 		commandMap.put("main-page",	new CommandNull("boardMvc.jsp") );
-//		commandMap.put("list-page",	new CommandList("BoardList.jsp") );
+		commandMap.put("list-page",	 ("BoardList.jsp") );
 		// 나머지도 추가하기	
 //		commandMap.put("input-page", new CommandNull("insertMessage.jsp"));
 //		commandMap.put("input-do", new CommandInput("listMessage.jsp"));

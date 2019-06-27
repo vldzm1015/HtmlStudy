@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"     
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+<mapper namespace="mapper.BoardMapper">
+
+	<select id="selectComment" parameterType="hashmap" resultType="comment"> 
+	SELECT *
+	FROM comment_tab  
+		<where>
+			<!-- CDATA 기호가 들어가서 에러가 날 때 씀 -->
+<!-- 			<![CDATA[ comment_no > 20]]> -->
+			
+			<if test="commentNo != null">
+				comment_no=#{commentNo} 
+			</if>
+		</where> 
+	</select>
+	
+<!-- 게시글 입력전에 그 글의 그룹번호를 얻어온다 -->
+	
+	
+	
+<!-- 	<select id="selectCommentByPK" parameterType="long" resultType="comment"> -->
+<!-- 	SELECT * -->
+<!-- 	FROM comment_tab 	 -->
+<!-- 	WHERE comment_no=#{commentNo} -->
+<!-- 	</select> -->
+
+	
+	<insert id="insertComment" parameterType="comment">
+	INSERT INTO comment_tab (comment_no, user_id, comment_content, reg_date) 
+	VALUES( seq_comment_no.NEXTVAL, #{userId}, #{commentContent}, SYSDATE )
+	</insert>
+
+	<delete id="deleteComment" parameterType="long" >
+	DELETE 
+	FROM comment_tab 	
+	WHERE comment_no=#{commentNo}
+	</delete>	
+	
+	<update id="modifyComment" parameterType="comment">
+	UPDATE comment_tab  SET  user_id=#{userId},  comment_content=#{commentContent}, reg_date=sysdate
+	WHERE comment_no=#{commentNo}
+	</update>
+	
+	<!-- 
+	#{} : prepareStatement를 이용
+	${} : Statement를 이용
+	 -->
+	 
+	 
+</mapper> 
+

@@ -1,17 +1,12 @@
-package board.model;
+package mybaties.board.model;
 
 
 import java.sql.*;
+import java.util.*;
 
-import java.util.ArrayList;
-
-import java.util.Collections;
-
-import java.util.List;
-
-
-
-import guest.model.MessageException;
+import mybaties.board.model.BoardDao;
+import mybaties.board.model.BoardException;
+import mybaties.board.model.BoardRec;
 
 
 
@@ -816,5 +811,5 @@ public class BoardDao
 		
 
 	}
-
 }
+
