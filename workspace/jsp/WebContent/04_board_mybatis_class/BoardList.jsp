@@ -6,8 +6,11 @@
 <%@ page import="mybaties.board.service.BoardService" %> 
 <%@ page import="java.util.*,java.text.*" %>
 
+  <!-- 서비스의 메소드 호출  --> 
+<% 
+ 	List <BoardRec> mList = ListArticleService.getInstance().getArticleList();
 
-
+%>
 <%  //웹브라우저가 게시글 목록을 캐싱할 경우 새로운 글이 추가되더라도 새글이 목록에 안 보일 수 있기 때문에 설정
 
 	response.setHeader("Pragma","No-cache");		// HTTP 1.0 version
@@ -28,9 +31,9 @@
 
 // Service에 getArticleList()함수를 호출하여 전체 메세지 레코드 검색 
 
- 	List <BoardRec> mList =  null;
+//  	List <BoardRec> mList =  null;
 
-	 ListArticleService service = ListArticleService.getInstance();
+// 	 ListArticleService service = ListArticleService.getInstance();
 
 	 //전체 페이지 수 가져오기
 

@@ -4,15 +4,10 @@
 
 
 <!DOCTYPE html>
-
 <html>
-
 <head>
-
 <meta charset="UTF-8">
-
 <title>Insert title here</title>
-
 </head>
 
 <body>
@@ -25,7 +20,7 @@
 
 <a href='BoardInputForm.jsp'>게시글 쓰기</a>
 
-<hr/>
+<hr/>	
 
 <a href='BoardView.jsp?article_id=2'>2번글 내용보기</a>
 

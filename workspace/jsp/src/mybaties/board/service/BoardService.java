@@ -3,6 +3,7 @@ package mybaties.board.service;
 import java.util.*;
 import mybaties.board.model.BoardRec;
 import mybaties.board.session.BoardRepository;
+import mybaties.guest.model.Comment;
 
 public class BoardService {
 	
@@ -17,8 +18,7 @@ public class BoardService {
 		return service;
 	}
 	BoardRepository repo =  new BoardRepository();
-	
-	
+
 	
 	
 }
