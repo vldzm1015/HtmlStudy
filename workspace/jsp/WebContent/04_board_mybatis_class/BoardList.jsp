@@ -31,9 +31,9 @@
 
 // Service에 getArticleList()함수를 호출하여 전체 메세지 레코드 검색 
 
-//  	List <BoardRec> mList =  null;
+ 	List <BoardRec> mList =  null;
 
-// 	 ListArticleService service = ListArticleService.getInstance();
+	 ListArticleService service = ListArticleService.getInstance();
 
 	 //전체 페이지 수 가져오기
 
